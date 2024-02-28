@@ -13,6 +13,13 @@ if inp == "y" then
     shell.run("cp /rom/programs/fun/hello.lua /os/programs")
     shell.run("viminstaller.lua")
     shell.run("rm viminstaller.lua")
+    print("Include rapair files ? Y/N")
+    inp = read():lower()
+    if inp == "y" then
+        shell.run("pastebin get https://pastebin.com/raw/rrTuFmWv repair.lua")
+    else
+        print("Skipping repair files")
+    end
     print("Installation finished reboot now ?")
     inp = read():lower()
     if inp == "y" then
