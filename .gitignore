@@ -1,2 +1,2 @@
-.cash_history
-*.tmp
+/.cash_history
+/*.tmp
