@@ -1,7 +1,7 @@
 local git_urls = {"https://raw.githubusercontent.com/Minater247/CCVim/main/vim.lua", "https://raw.githubusercontent.com/Minater247/CCVim/main/.vimrc", "https://raw.githubusercontent.com/Minater247/CCVim/main/.version", "https://raw.githubusercontent.com/Minater247/CCVim/main/lib/args.lua", "https://raw.githubusercontent.com/Minater247/CCVim/main/lib/fil.lua", "https://raw.githubusercontent.com/Minater247/CCVim/main/lib/str.lua", "https://raw.githubusercontent.com/Minater247/CCVim/main/lib/tab.lua", "https://raw.githubusercontent.com/Minater247/CCVim/main/syntax/lua.lua"}
 local git_files = {"/vim/vim.lua", "/vim/.vimrc", "/vim/.version", "/vim/lib/args.lua", "/vim/lib/fil.lua", "/vim/lib/str.lua", "/vim/lib/tab.lua", "/vim/syntax/lua.lua"}
-local paste_urls = {"https://pastebin.com/raw/188w8sAR", "https://pastebin.com/raw/kZLWzTmq", "https://pastebin.com/raw/sHN9zgZv", "https://pastebin.com/raw/7Jthrp8J", "https://pastebin.com/raw/SYsYAvuD", "https://pastebin.com/raw/vkiYhy9G", "https://pastebin.com/raw/YqhAEyQh", "https://pastebin.com/raw/wFKC5Y5T", "https://pastebin.com/raw/dxKtQSgA"}
-local paste_files = {"startup.lua", "verify.lua", "/os/programmanger.lua", "/os/filemgr.lua", "/os/doorcli.lua", "/os/data/brokendoor.nfp", "/os/data/logo.nfp", "viminstaller.lua", "cash.lua"}
+local paste_urls = {"https://pastebin.com/raw/188w8sAR", "https://pastebin.com/raw/kZLWzTmq", "https://pastebin.com/raw/sHN9zgZv", "https://pastebin.com/raw/7Jthrp8J", "https://pastebin.com/raw/SYsYAvuD", "https://pastebin.com/raw/vkiYhy9G", "https://pastebin.com/raw/YqhAEyQh", "https://pastebin.com/raw/dxKtQSgA"}
+local paste_files = {"startup.lua", "verify.lua", "/os/programmanger.lua", "/os/filemgr.lua", "/os/doorcli.lua", "/os/data/brokendoor.nfp", "/os/data/logo.nfp", "cash.lua"}
 local torepair_paste_url = {}
 local torepair_git_url = {}
 local torepair_git_file = {}
@@ -54,4 +54,3 @@ for i = 1, #torepair_git_file, 1 do
         break
     end
 end
-print("Repair ended")
