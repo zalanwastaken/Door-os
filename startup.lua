@@ -6,6 +6,10 @@ sel = 2
 if #cmds ~= #options then
     error("Cmds not equal to options (#options ~= #cmds)")
 end
+hires = false
+if w >= 126 and h >= 49 then
+    hires = true
+end
 term.clear()
 term.setCursorPos(1, 1)
 shell.run("screenfetch")
@@ -18,8 +22,12 @@ shell.run("drive")
 textutils.slowPrint("##########")
 sleep(2)
 logo = paintutils.loadImage("os/data/logo.nfp")
-paintutils.drawImage(logo, 1, 1)
-sleep(2)
+if hires then
+    paintutils.drawImage(logo, 1, 1)
+    sleep(2)
+else
+    sleep(0.5)
+end
 while true do
     w, h = term.getSize()  
     term.setBackgroundColor(colors.blue)
@@ -31,15 +39,24 @@ while true do
     print("Door_ OS: "..os.getComputerLabel())
     term.setBackgroundColor(colors.blue)
     term.setTextColor(colors.white)
-    print("") -- leave a line
     print("This computer is "..os.getComputerID())
+    local tmp = 1
     for i = 1, #options, 1 do
+        if i == sel then
+            term.setCursorPos(w / 2 - ((#options[i] + 2) / 2), tmp + (h / 2))
+        else
+            term.setCursorPos(w / 2 - (#options[i] / 2), tmp + (h / 2))
+        end
+        tmp = tmp + 1
         if sel == i then
              print("["..options[i].."]" ) 
         else
             print(options[i])
         end
     end
+    term.setCursorPos(w - 2, h - 2)
+    print(cmds[sel], sel)
+    event, key = os.pullEvent("key") -- get pressed key and wait
     if key == keys.up then
         sel = sel - 1
     end
@@ -53,13 +70,15 @@ while true do
         sel = #options
     end
     if key == keys.enter then
+        require(cmds[sel])
+        --[[
         if cmds[sel-1] ~= nil then
            -- os.run({}, cmds[sel-1])
-               require(cmds[sel-1])
+               
         else
            -- os.run({}, cmds[#options]) 
            require(cmds[#options])
-         end
+        end
+        --]]
     end
-    event, key = os.pullEvent("key") -- get pressed key and wait
 end
