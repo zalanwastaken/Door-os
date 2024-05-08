@@ -1,7 +1,7 @@
-shell.setPath(shell.path()..":/vim/") -- set the path for CCVIM
+require("startuprc")
 w, h = term.getSize()
-options = {"Programs", "File mamager", "Shutdown", "CLI"}
-cmds = {"/os/programmanger", "/os/filemgr", "/rom/programs/shutdown", "/os/doorcli"}
+options = {"Programs", "File mamager", "CLI", "Shutdown"}
+cmds = {"/os/programmanger", "/os/filemgr", "/os/programs/cash" ,"/rom/programs/shutdown"}
 sel = 2
 if #cmds ~= #options then
     error("Cmds not equal to options (#options ~= #cmds)")
@@ -55,7 +55,7 @@ while true do
         end
     end
     term.setCursorPos(w - 2, h - 2)
-    print(cmds[sel], sel)
+    print(cmds[sel])
     event, key = os.pullEvent("key") -- get pressed key and wait
     if key == keys.up then
         sel = sel - 1
@@ -70,15 +70,7 @@ while true do
         sel = #options
     end
     if key == keys.enter then
-        require(cmds[sel])
-        --[[
-        if cmds[sel-1] ~= nil then
-           -- os.run({}, cmds[sel-1])
-               
-        else
-           -- os.run({}, cmds[#options]) 
-           require(cmds[#options])
-        end
-        --]]
+        --require(cmds[sel])
+        shell.run("fg "..cmds[sel])
     end
 end

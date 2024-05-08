@@ -1,7 +1,7 @@
 print("Install Door OS ?")
 inp = read():lower()
 if inp == "n" then
-    goto exit
+    goto exit -- not a error
 end
 urls = {"https://raw.githubusercontent.com/zalanwastaken/Door-os/main/startup.lua", "https://raw.githubusercontent.com/zalanwastaken/Door-os/main/verify.lua", "https://raw.githubusercontent.com/zalanwastaken/Door-os/main/cash.lua", "https://raw.githubusercontent.com/zalanwastaken/Door-os/main/os/doorcli.lua", "https://raw.githubusercontent.com/zalanwastaken/Door-os/main/os/filemgr.lua", "https://raw.githubusercontent.com/zalanwastaken/Door-os/main/os/programmanger.lua", "https://raw.githubusercontent.com/zalanwastaken/Door-os/main/repair.lua"}
 files = {"startup.lua", "verify.lua", "cash.lua", "/os/doorcli.lua", "/os/filemgr.lua", "/os/programmanager.lua", "repair.lua"}
