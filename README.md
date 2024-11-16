@@ -1,3 +1,4 @@
+# DOOR_OS has now been discontinued. Due to beeing me getting bored from this project :|
 # DOOR_OS
 A simple OS/Wrapper made for computer craft to make it easier for new people to start programming.<br>
 Download (Copy paste the installer.lua) into the computer that you want to insall Door OS on and run the file.<br>
